@@ -18,6 +18,13 @@ api.get('/campuses', function (req, res, next) {
   .catch(next)
 })
 
+api.get('/campuses/:campusId', function (req, res, next) {
+  Campus.findById(req.params.campusId)
+  .then((campus) => {
+    res.send(campus)
+  })
+})
+
 api.get('/students', function (req, res, next) {
   Student.findAll({})
   .then((students) => res.send(students))

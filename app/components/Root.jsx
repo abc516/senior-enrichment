@@ -7,9 +7,9 @@ import store from '../store'
 import CampusesContainer from '../containers/CampusesContainer'
 import StudentsContainer from '../containers/StudentsContainer'
 import AddStudent from './AddStudent'
-import SingleCampus from './SingleCampus'
+import SingleCampusContainer from '../containers/SingleCampusContainer'
 import App from './App'
-import {receiveStudents, receiveCampuses} from '../action-creators'
+import {receiveStudents, receiveCampuses, getCampusById} from '../action-creators'
 const onAppEnter = () => {
 
   const pCampuses = axios.get('/api/campuses');
@@ -24,13 +24,18 @@ const onAppEnter = () => {
     });
 };
 
+const onCampusEnter = (nextRouterState) => {
+  const campusId = nextRouterState.params.campusId
+  store.dispatch(getCampusById(campusId))
+}
+
 export default function Root () {
     return (
       <Provider store={store}>
         <Router history={hashHistory}>
           <Route path="/" component={App} onEnter={onAppEnter}>
             <Route path="/campuses" component={CampusesContainer} />
-            <Route path="/campuses/:campusId" component={SingleCampus} />
+            <Route path="/campuses/:campusId" component={SingleCampusContainer} onEnter={onCampusEnter} />
             <Route path="/students" component={StudentsContainer} />
             <Route path="/addStudent" component={AddStudent} />
             <IndexRedirect to="/campuses" />

@@ -1,9 +1,16 @@
 import React, { PropTypes } from 'react'
+import Students from './Students'
 
-class SingleCampus extends React.Component {
-  render () {
-    return <h1>Single Campus</h1>
-  }
+export default function SingleCampus(props) {
+
+  const campus = props.campus
+  const studentsOnCampus = props.studentsOnCampus
+
+  return (
+    <div>
+      <h3>Welcome to {campus.name} !</h3>
+      <img src={campus.imageUrl} />
+      <Students students={studentsOnCampus} />
+    </div>
+  )
 }
-
-export default SingleCampus;
