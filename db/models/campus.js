@@ -8,5 +8,5 @@ module.exports = db.define('campus', {
     type: Sequelize.STRING,
     allowNull: false
   },
-  image: Sequelize.TEXT
+  imageUrl: Sequelize.TEXT
 })
