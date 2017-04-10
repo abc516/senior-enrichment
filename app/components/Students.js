@@ -1,9 +1,21 @@
 import React, { PropTypes } from 'react'
 
-class Students extends React.Component {
-  render () {
-    return <h1> Students Comp </h1>
-  }
+function Students (props) {
+
+  const students = props.students
+
+  return (
+    <div>
+      <h3>List of Students</h3>
+      <ul className="list-group">
+        {
+          students && students.map(student => (
+            <li className="list-group-item" key={student.id}>{student.name}</li>
+          ))
+        }
+      </ul>
+    </div>
+  )
 }
 
 export default Students;
