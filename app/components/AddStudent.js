@@ -9,11 +9,6 @@ function AddStudent(props) {
     const handleSubmit = props.handleSubmit
     const handleChange = props.handleChange
 
-    console.log('schools', schools)
-    console.log('email', email)
-    console.log('name', name)
-    console.log('schoolId', schoolId)
-    
     return (
       <div>
         <h1> Add Student </h1>

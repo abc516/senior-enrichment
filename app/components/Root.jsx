@@ -7,6 +7,7 @@ import store from '../store'
 import CampusesContainer from '../containers/CampusesContainer'
 import StudentsContainer from '../containers/StudentsContainer'
 import AddStudentContainer from '../containers/AddStudentContainer'
+import AddCampusContainer from '../containers/AddCampusContainer'
 import SingleCampusContainer from '../containers/SingleCampusContainer'
 import SingleStudentContainer from '../containers/SingleStudentContainer'
 import App from './App'
@@ -52,6 +53,7 @@ export default function Root () {
               component={SingleStudentContainer}
               onEnter={onStudentEnter} />
             <Route path="/addStudent" component={AddStudentContainer} />
+            <Route path="/addCampus" component={AddCampusContainer} />
             <IndexRedirect to="/campuses" />
           </Route>
         </Router>

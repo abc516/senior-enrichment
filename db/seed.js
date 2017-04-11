@@ -25,9 +25,7 @@ db.sync({force: true})
   return Promise.map(Object.keys(data), function (name) {
     return Promise.map(data[name], function (item) {
       return db.model(name)
-      .create(item, {
-        include: Campus
-      });
+      .create(item);
     });
   });
 })
