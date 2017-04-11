@@ -13,7 +13,7 @@ var data = {
   student: [
     {name: 'Anton Cataldi', email: 'antoncataldi@gmail.com', campusId: 2},
     {name: 'Kevin G', email: 'keving@gmail.com', campusId: 1},
-    {name: 'Jack Morrison', email: 'jm@overwatch.com', campusId: 3},
+    {name: 'Jack Morrison', email: 's76@overwatch.com', campusId: 3},
     {name: 'Lena Oxton', email: 'tracer@overwatch.com', campusId: 4},
     {name: 'Stephen Curry', email: 'sc@gswarriors.com', campusId: 3}
   ]

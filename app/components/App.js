@@ -12,6 +12,9 @@ const App = ({children}) => {
             <Link className="navbar-brand" to={'/students'}>
               <span>Students</span>
             </Link>
+            <Link className="navbar-brand" to={'/AddStudent'}>
+              <span>Add a Student</span>
+            </Link>
           </div>
         </div>
       </nav>

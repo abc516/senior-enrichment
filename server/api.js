@@ -38,4 +38,10 @@ api.get('/students/:studentId', function (req, res, next) {
   })
 })
 
+api.post('/students', function (req, res, next) {
+  Student.create(req.body)
+  .then((createdStudent) => res.send(createdStudent))
+  .catch(next)
+})
+
 module.exports = api
