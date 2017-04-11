@@ -31,4 +31,11 @@ api.get('/students', function (req, res, next) {
   .catch(next)
 })
 
+api.get('/students/:studentId', function (req, res, next) {
+  Student.findById(req.params.studentId)
+  .then((student) => {
+    res.send(student)
+  })
+})
+
 module.exports = api
