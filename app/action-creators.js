@@ -62,3 +62,15 @@ export const addNewStudent = (newStudentData) => {
     })
   }
 }
+
+export const addNewCampus = (newCampusData) => {
+  return (dispatch, getState) => {
+    return axios.post('/api/campuses', newCampusData)
+    .then(res => res.data)
+    .then(newCampus => {
+      const campuses = getState().campuses
+      const newCampuses = campuses.concat(newCampus)
+      dispatch(receiveCampuses(newCampuses))
+    })
+  }
+}
