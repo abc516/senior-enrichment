@@ -5,10 +5,10 @@ var Promise = require('bluebird')
 
 var data = {
   campus: [
-    {name: 'RPI', imageUrl: 'http://placehold.it/350x150'},
-    {name: 'RIT', imageUrl: 'http://placehold.it/350x150'},
-    {name: 'CWRU', imageUrl: 'http://placehold.it/350x150'},
-    {name: 'BU', imageUrl: 'http://placehold.it/350x150'}
+    {name: 'RPI', imageUrl: 'https://is5-ssl.mzstatic.com/image/thumb/Purple6/v4/0f/37/5a/0f375a22-374f-5e83-4e8d-2a4f32633d01/source/256x256bb.jpg'},
+    {name: 'RIT', imageUrl: 'http://www.commonapp.org/files/styles/400-y/public/school/logo/RIT-logo-%208.25.jpg'},
+    {name: 'CWRU', imageUrl: 'https://pbs.twimg.com/profile_images/657295708161048576/wfDtPIB0.jpg'},
+    {name: 'BU', imageUrl: 'https://www.hscripts.com/freeimages/logos/university-logos/bu-seal/bu-seal-clipart-256.gif'}
   ],
   student: [
     {name: 'Anton Cataldi', email: 'antoncataldi@gmail.com', campusId: 2},
