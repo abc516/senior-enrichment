@@ -19,25 +19,18 @@ var data = {
   ]
 }
 
-db.sync({force: true})
+db.didSync
+.then(() => db.sync({force: true}))
 .then(function () {
   console.log("Dropped old data, now inserting data");
   return Promise.map(Object.keys(data), function (name) {
     return Promise.map(data[name], function (item) {
+      console.log('creating item...', item)
       return db.model(name)
       .create(item);
     });
   });
 })
-// .then(function () {
-//   console.log('Campuses and students created, now associating each student with a campus')
-//   Promise.map(data.student, function (item) {
-//     return Student.findById(data.student.indexOf(item))
-//            .then(student => {
-//              return student.update({campusId: student.id})
-//            })
-//   })
-// })
 .then(function () {
   console.log("Finished inserting data (press ctrl-c to exit)");
 })
